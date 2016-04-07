@@ -12,8 +12,6 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import org.bukkit.Bukkit;
-import org.bukkit.event.EventPriority;
-import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
