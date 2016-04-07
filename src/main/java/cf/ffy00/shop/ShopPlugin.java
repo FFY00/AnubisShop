@@ -25,6 +25,18 @@ public class ShopPlugin extends JavaPlugin {
     
     private File dataFolder = new File(pluginFolder, "data");
 
+    @Override
+    public void onEnable() {
+        pl = getDescription();
+        Bukkit.getConsoleSender().sendMessage("§bEnabling " + this.pl.getName() + " v" + this.pl.getVersion() + " by FFY00!");
+        setupConfig();
+    }
+
+    @Override
+    public void onDisable() {
+        Bukkit.getConsoleSender().sendMessage("§bDisabling " + this.pl.getName() + " v" + this.pl.getVersion() + " by FFY00!");
+    }
+    
     /*
     * Setup Config
     */
@@ -52,18 +64,6 @@ public class ShopPlugin extends JavaPlugin {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void onEnable() {
-        pl = getDescription();
-        Bukkit.getConsoleSender().sendMessage("§bEnabling " + this.pl.getName() + " v" + this.pl.getVersion() + " by FFY00!");
-        setupConfig();
-    }
-
-    @Override
-    public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage("§bDisabling " + this.pl.getName() + " v" + this.pl.getVersion() + " by FFY00!");
     }
     
     
