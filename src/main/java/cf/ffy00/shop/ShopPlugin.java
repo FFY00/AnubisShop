@@ -68,7 +68,6 @@ public class ShopPlugin extends JavaPlugin {
         }
     }
     
-    
     public File getPlayerDataFolder(){
         return dataFolder;
     }
