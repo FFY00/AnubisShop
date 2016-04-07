@@ -19,28 +19,30 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class ShopPlugin extends JavaPlugin {
     
-    PluginDescriptionFile pl;
-    public static File bukkitFolder;
-    public static File pluginFolder;
+    public static ShopPlugin plugin;
+    private static PluginDescriptionFile pl;
+    private static File bukkitFolder;
+    private static File pluginFolder;
     
-    private File dataFolder = new File(pluginFolder, "data");
+    private final File dataFolder = new File(pluginFolder, "data");
 
     @Override
     public void onEnable() {
         pl = getDescription();
-        Bukkit.getConsoleSender().sendMessage("§bEnabling " + this.pl.getName() + " v" + this.pl.getVersion() + " by FFY00!");
+        Bukkit.getConsoleSender().sendMessage("§bEnabling " + pl.getName() + " v" + pl.getVersion() + " by FFY00!");
         setupConfig();
+        plugin = this;
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage("§bDisabling " + this.pl.getName() + " v" + this.pl.getVersion() + " by FFY00!");
+        Bukkit.getConsoleSender().sendMessage("§bDisabling " + pl.getName() + " v" + pl.getVersion() + " by FFY00!");
     }
     
     /*
     * Setup Config
     */
-    public void setupConfig(){
+    private void setupConfig(){
         bukkitFolder = getDataFolder();
         pluginFolder = new File(bukkitFolder, pl.getName());
         if(!new File (bukkitFolder, "config.yml").exists()){
@@ -66,5 +68,9 @@ public class ShopPlugin extends JavaPlugin {
         }
     }
     
+    
+    public File getPlayerDataFolder(){
+        return dataFolder;
+    }
     
 }
