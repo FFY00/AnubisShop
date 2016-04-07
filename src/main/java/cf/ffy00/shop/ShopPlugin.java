@@ -6,13 +6,17 @@
 
 package cf.ffy00.shop;
 
+import cf.ffy00.shop.listeners.SignChangeListener;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import org.bukkit.Bukkit;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
+
 /**
  *
  * @author FFY00 <FFY00 at ffy00.cf>
@@ -28,10 +32,13 @@ public class ShopPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        plugin = this;
         pl = getDescription();
         Bukkit.getConsoleSender().sendMessage("§bEnabling " + pl.getName() + " v" + pl.getVersion() + " by FFY00!");
         setupConfig();
-        plugin = this;
+        
+        // Declare Listeners
+        getServer().getPluginManager().registerEvents(new SignChangeListener(), this);
     }
 
     @Override
@@ -53,7 +60,7 @@ public class ShopPlugin extends JavaPlugin {
     /*
     * Write binary file from InputStream
     */
-    private void writeFile(InputStream in, File file) {
+    private boolean writeFile(InputStream in, File file) {
         try {
             OutputStream out = new FileOutputStream(file);
             byte[] buf = new byte[1024];
@@ -63,11 +70,16 @@ public class ShopPlugin extends JavaPlugin {
             }
             out.close();
             in.close();
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
     }
     
+    /*
+    * Returns the Data Folder
+    */
     public File getPlayerDataFolder(){
         return dataFolder;
     }
