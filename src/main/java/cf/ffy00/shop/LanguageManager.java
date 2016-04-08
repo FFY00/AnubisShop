@@ -11,6 +11,10 @@ package cf.ffy00.shop;
  */
 public class LanguageManager {
     
-    public static String ERR_CANT_BREAK_SHOP = "§cYou can't break this shop!S";
+    // ERR
+    public static String ERR_CANT_BREAK_SHOP = "§cYou can't break this shop!";
+    
+    // INFO
+    public static String INFO_SHOP_BREAKED = "§aShop successfully breaked!";
     
 }
