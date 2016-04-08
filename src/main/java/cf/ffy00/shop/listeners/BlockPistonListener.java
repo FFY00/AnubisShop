@@ -5,7 +5,7 @@
  */
 package cf.ffy00.shop.listeners;
 
-import cf.ffy00.shop.ShopPlugin;
+import static cf.ffy00.shop.ShopAPI.isShop;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
@@ -23,7 +23,7 @@ public class BlockPistonListener {
                     || b.getType().equals(Material.SIGN_POST)
                     || b.getType().equals(Material.WALL_SIGN)){
             Sign s = (Sign) e.getBlock();
-            if(ShopPlugin.plugin.getApi().isShop(s)){
+            if(isShop(s)){
                 e.setCancelled(true);
             }
         }
