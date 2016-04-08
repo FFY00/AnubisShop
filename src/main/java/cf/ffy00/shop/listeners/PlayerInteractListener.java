@@ -5,6 +5,7 @@
  */
 package cf.ffy00.shop.listeners;
 
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
@@ -21,7 +22,9 @@ public final class PlayerInteractListener implements Listener{
         if(e.getAction().equals(Action.RIGHT_CLICK_BLOCK) || e.getAction().equals(Action.LEFT_CLICK_BLOCK)){
             Player p = (Player) e.getPlayer();
             Block b = e.getClickedBlock();
-            if(b.getTypeId() == 63 || b.getTypeId() == 68){
+            if(b.getType().equals(Material.SIGN)
+                    || b.getType().equals(Material.SIGN_POST)
+                    || b.getType().equals(Material.WALL_SIGN)){
                 
             }
         }
