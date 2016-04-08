@@ -7,10 +7,8 @@
 package cf.ffy00.shop;
 
 import cf.ffy00.shop.listeners.SignChangeListener;
+import cf.ffy00.shop.listeners.PlayerInteractListener;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -19,29 +17,31 @@ import org.bukkit.plugin.java.JavaPlugin;
  *
  * @author FFY00 <FFY00 at ffy00.cf>
  */
-public class ShopPlugin extends JavaPlugin {
+public final class ShopPlugin extends JavaPlugin {
     
     public static ShopPlugin plugin;
     private static PluginDescriptionFile pl;
     private static File bukkitFolder;
+    private static File pluginsFolder;
     private static File pluginFolder;
-    
-    private final File dataFolder = new File(pluginFolder, "data");
+    private static File dbFile;
+    private static final ShopAPI api = new ShopAPI();
 
     @Override
     public void onEnable() {
         plugin = this;
         pl = getDescription();
-        Bukkit.getConsoleSender().sendMessage("§bEnabling " + pl.getName() + " v" + pl.getVersion() + " by FFY00!");
+        Bukkit.getConsoleSender().sendMessage("§bEnabling §cAnubisShop §bv" + pl.getVersion() + " by FFY00!");
         setupConfig();
         
-        // Declare Listeners
+        // Declare Listenerss
         getServer().getPluginManager().registerEvents(new SignChangeListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage("§bDisabling " + pl.getName() + " v" + pl.getVersion() + " by FFY00!");
+        Bukkit.getConsoleSender().sendMessage("§bDisabling §cAnubisShop §bv" + pl.getVersion() + " by FFY00!");
     }
     
     /*
@@ -49,37 +49,15 @@ public class ShopPlugin extends JavaPlugin {
     */
     private void setupConfig(){
         bukkitFolder = getDataFolder();
-        pluginFolder = new File(bukkitFolder, pl.getName());
+        pluginsFolder = new File(bukkitFolder, "plugins");
+        pluginFolder = new File(pluginsFolder, pl.getName());
+        dbFile = new File(pluginFolder, "data");
         if(!new File (bukkitFolder, "config.yml").exists()){
             saveDefaultConfig();
         }
-    }
-    
-    /*
-    * Write binary file from InputStream
-    */
-    private boolean writeFile(InputStream in, File file) {
-        try {
-            OutputStream out = new FileOutputStream(file);
-            byte[] buf = new byte[1024];
-            int len;
-            while((len=in.read(buf))>0){
-                out.write(buf,0,len);
-            }
-            out.close();
-            in.close();
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
+        if(!dbFile.exists()){
+            api.writeFile(getResource(""), dbFile);
         }
-    }
-    
-    /*
-    * Returns the Data Folder
-    */
-    public File getPlayerDataFolder(){
-        return dataFolder;
     }
     
 }
