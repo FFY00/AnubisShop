@@ -6,7 +6,6 @@
 package cf.ffy00.shop.listeners;
 
 import static cf.ffy00.shop.ShopAPI.isShop;
-import cf.ffy00.shop.ShopPlugin;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
