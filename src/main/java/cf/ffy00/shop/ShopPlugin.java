@@ -6,6 +6,7 @@
 
 package cf.ffy00.shop;
 
+import static cf.ffy00.shop.ShopAPI.writeFile;
 import cf.ffy00.shop.listeners.SignChangeListener;
 import cf.ffy00.shop.listeners.PlayerInteractListener;
 import java.io.File;
@@ -25,7 +26,6 @@ public final class ShopPlugin extends JavaPlugin {
     private static File pluginsFolder;
     private static File pluginFolder;
     private static File dbFile;
-    private static final ShopAPI api = new ShopAPI();
 
     @Override
     public void onEnable() {
@@ -56,15 +56,8 @@ public final class ShopPlugin extends JavaPlugin {
             saveDefaultConfig();
         }
         if(!dbFile.exists()){
-            api.writeFile(getResource(""), dbFile);
+            writeFile(getResource(""), dbFile);
         }
-    }
-    
-    /*
-    * Gets the api class
-    */
-    public ShopAPI getApi(){
-        return api;
     }
     
 }
