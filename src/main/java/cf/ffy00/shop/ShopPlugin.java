@@ -60,4 +60,11 @@ public final class ShopPlugin extends JavaPlugin {
         }
     }
     
+    /*
+    * Gets the api class
+    */
+    public ShopAPI getApi(){
+        return api;
+    }
+    
 }
