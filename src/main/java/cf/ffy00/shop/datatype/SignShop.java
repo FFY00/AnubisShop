@@ -1,7 +1,7 @@
 /*
  * Copyright 2016 FFY00
  * 
- * All Rights Reserved
+ * Simple Non Code License (SNCL) v1.10.0
  */
 package cf.ffy00.shop.datatype;
 
