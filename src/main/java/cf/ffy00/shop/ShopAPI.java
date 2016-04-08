@@ -21,7 +21,7 @@ public final class ShopAPI {
     /*
     * Write binary file from InputStream
     */
-    public boolean writeFile(InputStream in, File file) {
+    public static boolean writeFile(InputStream in, File file) {
         try {
             try (OutputStream out = new FileOutputStream(file)) {
                 byte[] buf = new byte[1024];
@@ -40,14 +40,14 @@ public final class ShopAPI {
     /*
     * Checks if the Sign is a Shop Sign
     */
-    public boolean isShop(Sign s){
+    public static boolean isShop(Sign s){
         return false;
     }
     
     /*
     * Checks if the Sign is a Shop Sign
     */
-    public SignShop getShop(Sign s){
+    public static SignShop getShop(Sign s){
         return new SignShop();
     }
     
