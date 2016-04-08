@@ -11,4 +11,8 @@ package cf.ffy00.shop.datatype;
  */
 public class SignShop {
     
+    public String getOwner(){
+        return "";
+    }
+    
 }
