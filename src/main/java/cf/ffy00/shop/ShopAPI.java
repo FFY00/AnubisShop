@@ -5,6 +5,7 @@
  */
 package cf.ffy00.shop;
 
+import cf.ffy00.shop.datatype.SignShop;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -15,7 +16,7 @@ import org.bukkit.block.Sign;
  *
  * @author FFY00 <FFY00 at ffy00.cf>
  */
-public class ShopAPI {
+public final class ShopAPI {
     
     /*
     * Write binary file from InputStream
@@ -41,6 +42,13 @@ public class ShopAPI {
     */
     public boolean isShop(Sign s){
         return false;
+    }
+    
+    /*
+    * Checks if the Sign is a Shop Sign
+    */
+    public SignShop getShop(Sign s){
+        return new SignShop();
     }
     
 }
