@@ -6,11 +6,16 @@
 package cf.ffy00.shop.listeners;
 
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.SignChangeEvent;
 
 /**
  *
  * @author FFY00 <FFY00 at ffy00.cf>
  */
-public class SignChangeListener implements Listener{
+public final class SignChangeListener implements Listener{
+    
+    public void onSignChange(SignChangeEvent e){
+        
+    }
     
 }
