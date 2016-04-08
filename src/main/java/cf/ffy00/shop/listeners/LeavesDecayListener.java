@@ -5,6 +5,7 @@
  */
 package cf.ffy00.shop.listeners;
 
+import static cf.ffy00.shop.ShopAPI.isShop;
 import cf.ffy00.shop.ShopPlugin;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -23,7 +24,7 @@ public class LeavesDecayListener {
                     || b.getType().equals(Material.SIGN_POST)
                     || b.getType().equals(Material.WALL_SIGN)){
             Sign s = (Sign) e.getBlock();
-            if(ShopPlugin.plugin.getApi().isShop(s)){
+            if(isShop(s)){
                 e.setCancelled(true);
             }
         }
