@@ -22,7 +22,7 @@ public final class PlayerInteractListener implements Listener{
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent e){
         if(e.getAction().equals(Action.RIGHT_CLICK_BLOCK) || e.getAction().equals(Action.LEFT_CLICK_BLOCK)){
-            Player p = (Player) e.getPlayer();
+            Player p = e.getPlayer();
             Block b = e.getClickedBlock();
             if(b.getType().equals(Material.SIGN)
                     || b.getType().equals(Material.SIGN_POST)
