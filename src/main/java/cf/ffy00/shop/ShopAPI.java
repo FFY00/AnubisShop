@@ -50,7 +50,7 @@ public final class ShopAPI {
     * Checks if the Sign is a Shop Sign
     */
     public static SignShop getShop(Sign s){
-        return new SignShop();
+        return new SignShop(s);
     }
     
     /*
