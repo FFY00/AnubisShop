@@ -5,7 +5,6 @@
  */
 package cf.ffy00.shop.listeners;
 
-import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,8 +18,7 @@ public final class SignChangeListener implements Listener{
     
     @EventHandler
     public void onSignChange(SignChangeEvent e){
-        Block b = e.getBlock();
-        Sign s = (Sign) b.getState();
+        Sign s = (Sign) e.getBlock().getState();
     }
     
 }
