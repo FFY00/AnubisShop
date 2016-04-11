@@ -6,7 +6,6 @@
 package cf.ffy00.shop.listeners;
 
 import static cf.ffy00.shop.ShopAPI.getShop;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
 import org.bukkit.event.EventHandler;
@@ -22,9 +21,7 @@ public class LeavesDecayListener implements Listener{
     @EventHandler
     public void onLeavesDecay(LeavesDecayEvent e){
         Block b = e.getBlock();
-        if(b.getType().equals(Material.SIGN)
-                    || b.getType().equals(Material.SIGN_POST)
-                    || b.getType().equals(Material.WALL_SIGN)){
+        if(b.getState() instanceof Sign){
             Sign s = (Sign) b.getState();
             if(getShop(s).isShop()){
                 e.setCancelled(true);
