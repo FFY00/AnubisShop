@@ -10,22 +10,27 @@ import static cf.ffy00.shop.ShopAPI.isShop;
 import static cf.ffy00.shop.ShopAPI.getShop;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.block.BlockFace;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
 /**
  *
  * @author FFY00 <FFY00 at ffy00.cf>
  */
-public class BlockBreakListener {
+public final class BlockBreakListener implements Listener{
     
+    @EventHandler
     public void onBlockBreak(BlockBreakEvent e){
         Block b = e.getBlock();
         if(b.getType().equals(Material.SIGN)
                     || b.getType().equals(Material.SIGN_POST)
-                    || b.getType().equals(Material.WALL_SIGN)){
-            Sign s = (Sign) e.getBlock();
+                    || b.getType().equals(Material.WALL_SIGN)
+                    || b.getRelative(BlockFace.UP).getType().equals(Material.SIGN_POST)){
+            Sign s = (Sign) b.getState();
             if(isShop(s)){
                 Player p = e.getPlayer();
                 if(getShop(s).getOwner().equals(p.getName()) || p.hasPermission("shop.admin")){
