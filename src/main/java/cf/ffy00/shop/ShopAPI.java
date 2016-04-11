@@ -42,13 +42,6 @@ public final class ShopAPI {
     /*
     * Checks if the Sign is a Shop Sign
     */
-    public static boolean isShop(Sign s){
-        return true;
-    }
-    
-    /*
-    * Checks if the Sign is a Shop Sign
-    */
     public static SignShop getShop(Sign s){
         return new SignShop(s);
     }
