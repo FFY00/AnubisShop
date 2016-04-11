@@ -5,6 +5,7 @@
  */
 package cf.ffy00.shop.listeners;
 
+import static cf.ffy00.shop.ShopAPI.getShop;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
@@ -25,7 +26,10 @@ public final class PlayerInteractListener implements Listener{
             Player p = e.getPlayer();
             Block b = e.getClickedBlock();
             if(b.getState() instanceof Sign){
-                
+                Sign s = (Sign) b.getState();
+                if(getShop(s).isShop()){
+                    
+                }
             }
         }
     }
