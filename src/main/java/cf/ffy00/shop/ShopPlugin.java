@@ -60,7 +60,7 @@ public final class ShopPlugin extends JavaPlugin {
             saveDefaultConfig();
         }
         if(!dbFile.exists()){
-            writeFile(getResource(""), dbFile);
+            writeFile(getResource("data.sqlite"), dbFile);
         }
     }
     
