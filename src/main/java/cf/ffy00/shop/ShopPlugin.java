@@ -7,6 +7,8 @@
 package cf.ffy00.shop;
 
 import static cf.ffy00.shop.ShopAPI.writeFile;
+import cf.ffy00.shop.listeners.BlockBreakListener;
+import cf.ffy00.shop.listeners.LeavesDecayListener;
 import cf.ffy00.shop.listeners.SignChangeListener;
 import cf.ffy00.shop.listeners.PlayerInteractListener;
 import java.io.File;
@@ -37,6 +39,8 @@ public final class ShopPlugin extends JavaPlugin {
         // Declare Listenerss
         getServer().getPluginManager().registerEvents(new SignChangeListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
+        getServer().getPluginManager().registerEvents(new BlockBreakListener(), this);
+        getServer().getPluginManager().registerEvents(new LeavesDecayListener(), this);
     }
 
     @Override
