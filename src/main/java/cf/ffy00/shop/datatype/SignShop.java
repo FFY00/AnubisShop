@@ -27,8 +27,18 @@ public class SignShop {
         String id = ChatColor.stripColor(s.getLine(3)).split("#")[1];
     }
     
+    /*
+    * Returns the shop owner
+    */
     public String getOwner(){
         return "";
+    }
+    
+    /*
+    * Returns if the Sign is a Shop Sign or not
+    */
+    public boolean isShop(){
+        return true;
     }
     
 }
