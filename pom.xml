@@ -18,12 +18,6 @@
           <url>http://repo.bukkit.org/content/groups/public/</url>
         </repository>
         
-        <!-- SQLJet -->
-        <repository>
-            <id>tmate</id>
-            <url>http://maven.tmatesoft.com/content/repositories/releases</url>
-        </repository>
-        
     </repositories>
     <dependencies>
         
