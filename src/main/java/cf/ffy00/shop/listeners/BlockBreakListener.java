@@ -7,7 +7,6 @@ package cf.ffy00.shop.listeners;
 
 import cf.ffy00.shop.LanguageManager;
 import cf.ffy00.shop.ShopAPI;
-import static cf.ffy00.shop.ShopAPI.isShop;
 import static cf.ffy00.shop.ShopAPI.getShop;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
@@ -27,7 +26,7 @@ public final class BlockBreakListener implements Listener{
         Block b = e.getBlock();
         if(ShopAPI.hasRelativeSign(b)){
             Sign s = (Sign) b.getState();
-            if(isShop(s)){
+            if(getShop(s).isShop()){
                 Player p = e.getPlayer();
                 if(getShop(s).getOwner().equals(p.getName()) || p.hasPermission("shop.admin")){
                     p.sendMessage(LanguageManager.INFO_SHOP_BREAKED);
