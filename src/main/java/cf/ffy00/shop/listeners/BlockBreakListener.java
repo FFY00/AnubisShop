@@ -6,11 +6,10 @@
 package cf.ffy00.shop.listeners;
 
 import cf.ffy00.shop.LanguageManager;
+import cf.ffy00.shop.ShopAPI;
 import static cf.ffy00.shop.ShopAPI.isShop;
 import static cf.ffy00.shop.ShopAPI.getShop;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.block.BlockFace;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -26,10 +25,7 @@ public final class BlockBreakListener implements Listener{
     @EventHandler
     public void onBlockBreak(BlockBreakEvent e){
         Block b = e.getBlock();
-        if(b.getType().equals(Material.SIGN)
-                    || b.getType().equals(Material.SIGN_POST)
-                    || b.getType().equals(Material.WALL_SIGN)
-                    || b.getRelative(BlockFace.UP).getType().equals(Material.SIGN_POST)){
+        if(ShopAPI.hasRelativeSign(b)){
             Sign s = (Sign) b.getState();
             if(isShop(s)){
                 Player p = e.getPlayer();
