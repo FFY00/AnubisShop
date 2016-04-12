@@ -1,4 +1,4 @@
-# AnubisShop
+# AnubisShop [![Build Status](https://travis-ci.org/AnubisCore/AnubisShop.svg?branch=master)](https://travis-ci.org/AnubisCore/AnubisShop)
 Shop Plugin
 
 ### License
