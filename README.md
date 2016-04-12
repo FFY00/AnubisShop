@@ -6,5 +6,8 @@
 ### Version / Build
 v0.1 BETA Version
 
+### Contributors
+ - **Filipe Laíns** - Main Developer
+
 ### License
 Simple Non Code License (SNCL) v1.10.0
