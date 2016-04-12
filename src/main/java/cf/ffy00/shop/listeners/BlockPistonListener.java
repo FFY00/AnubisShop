@@ -23,7 +23,7 @@ public class BlockPistonListener {
                     || b.getType().equals(Material.SIGN_POST)
                     || b.getType().equals(Material.WALL_SIGN)){
             Sign s = (Sign) e.getBlock();
-            if(getShop(s).isShop()S){
+            if(getShop(s).isShop()){
                 e.setCancelled(true);
             }
         }
