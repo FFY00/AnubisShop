@@ -25,4 +25,3 @@ cache:
   - C:\Users\appveyor\.m2
 artifacts:
   - path: target\*
-  - name: AnubisShop
