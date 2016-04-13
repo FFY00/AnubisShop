@@ -19,6 +19,7 @@ import java.sql.SQLException;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -28,13 +29,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class ShopPlugin extends JavaPlugin {
     
     public static ShopPlugin plugin;
-    private static PluginDescriptionFile pl;
-    private static File bukkitFolder;
-    private static File pluginsFolder;
-    private static File pluginFolder;
-    private static File dbFile;
-    private static DatabaseFactory dbf;
+    private PluginDescriptionFile pl;
+    private File bukkitFolder;
+    private File pluginsFolder;
+    private File pluginFolder;
+    private File dbFile;
+    private DatabaseFactory dbf;
     private static Database db;
+    private PluginManager pm;
     
     // Table Vars
     private static Table TABLE_SHOPS;
@@ -45,14 +47,9 @@ public final class ShopPlugin extends JavaPlugin {
         pl = getDescription();
         Bukkit.getConsoleSender().sendMessage("§bEnabling §cAnubisShop §bv" + pl.getVersion() + " by FFY00!");
         setupConfig();
+        registerListeners();
         setupDatabase();
         setupDatabaseTables();
-        
-        // Declare Listenerss
-        getServer().getPluginManager().registerEvents(new SignChangeListener(), this);
-        getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
-        getServer().getPluginManager().registerEvents(new BlockBreakListener(), this);
-        getServer().getPluginManager().registerEvents(new LeavesDecayListener(), this);
         
         plugin = this;
     }
@@ -76,6 +73,17 @@ public final class ShopPlugin extends JavaPlugin {
     }
     
     /*
+    * Register Listeners
+    */
+    private void registerListeners(){
+        pm = getServer().getPluginManager();
+        pm.registerEvents(new SignChangeListener(), this);
+        pm.registerEvents(new PlayerInteractListener(), this);
+        pm.registerEvents(new BlockBreakListener(), this);
+        pm.registerEvents(new LeavesDecayListener(), this);
+    }
+    
+    /*
     * Setup Database
     */
     private void setupDatabase(){
@@ -88,7 +96,7 @@ public final class ShopPlugin extends JavaPlugin {
             db.connect();
         } catch (SQLException ex) {
             Bukkit.getConsoleSender().sendMessage("§bError conecting with the database! Disabling....");
-            Bukkit.getPluginManager().disablePlugin(this);
+            pm.disablePlugin(this);
         }
     }
     
