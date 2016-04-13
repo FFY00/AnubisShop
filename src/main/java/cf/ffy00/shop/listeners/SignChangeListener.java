@@ -5,6 +5,9 @@
  */
 package cf.ffy00.shop.listeners;
 
+import static cf.ffy00.shop.ShopPlugin.getDb;
+import static cf.ffy00.shop.ShopPlugin.getShopsTable;
+import com.lenis0012.database.Database;
 import org.bukkit.block.Sign;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -22,7 +25,8 @@ public final class SignChangeListener implements Listener{
         if(s.getLine(3).contains("Shop #") ){
             try{
                 Integer.parseInt(s.getLine(3).split("#")[1]);
-                
+                Database db = getDb();
+                db.set(getShopsTable(), "");
             } catch(NumberFormatException ex){}
         }
     }
