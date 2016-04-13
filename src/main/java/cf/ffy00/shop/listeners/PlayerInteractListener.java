@@ -23,11 +23,11 @@ public final class PlayerInteractListener implements Listener{
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent e){
         if(e.getAction().equals(Action.RIGHT_CLICK_BLOCK) || e.getAction().equals(Action.LEFT_CLICK_BLOCK)){
-            Player p = e.getPlayer();
             Block b = e.getClickedBlock();
             if(b.getState() instanceof Sign){
                 Sign s = (Sign) b.getState();
                 if(getShop(s).isShop()){
+                    Player p = e.getPlayer();
                     
                 }
             }
