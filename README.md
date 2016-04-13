@@ -9,7 +9,7 @@
 ### License [![License](https://img.shields.io/badge/license-SNCL-lightgrey.svg)](https://tldrlegal.com/license/simple-non-code-license-%28sncl%29) 
 
 ### Artifact Building
-You can get all artifacts from our [AppVeyor page](https://ci.appveyor.com/project/FFY00/anubisshop). We use Travis-CI also but only AppVeyor will have the compiled artifacts. For normal releases use our [GitHub realease page](https://github.com/AnubisCore/AnubisShop/releases) .
+You can get all artifacts from our [AppVeyor page](https://ci.appveyor.com/project/FFY00/anubisshop). We use Travis-CI also but only AppVeyor will have the compiled artifacts. For normal releases use our [GitHub release page](https://github.com/AnubisCore/AnubisShop/releases) .
 
 ### Contributors
  - [**Filipe Laíns**](http://twitter.com/intent/user?screen_name=FilipeLains) - Main Developer
