@@ -5,6 +5,8 @@
  */
 package cf.ffy00.shop.datatype;
 
+import static cf.ffy00.shop.ShopPlugin.getDb;
+import com.lenis0012.database.Database;
 import org.bukkit.ChatColor;
 import org.bukkit.block.Sign;
 
@@ -25,6 +27,7 @@ public class SignShop {
     
     public SignShop(Sign s){
         String id = ChatColor.stripColor(s.getLine(3)).split("#")[1];
+        Database db = getDb();
     }
     
     /*
