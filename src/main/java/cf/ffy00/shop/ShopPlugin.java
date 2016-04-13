@@ -43,7 +43,7 @@ public final class ShopPlugin extends JavaPlugin {
         pl = getDescription();
         Bukkit.getConsoleSender().sendMessage("§bEnabling §cAnubisShop §bv" + pl.getVersion() + " by FFY00!");
         setupConfig();
-        createDatabase();
+        setupDatabase();
         
         // Declare Listenerss
         getServer().getPluginManager().registerEvents(new SignChangeListener(), this);
@@ -75,7 +75,7 @@ public final class ShopPlugin extends JavaPlugin {
     /*
     * Setup Database
     */
-    private void createDatabase(){
+    private void setupDatabase(){
         dbf = new DatabaseFactory(plugin);
         dbFile = new File(pluginFolder, "data.db");
         ConfigurationSection section = getConfig().getConfigurationSection("MySQL");
@@ -87,6 +87,13 @@ public final class ShopPlugin extends JavaPlugin {
             Bukkit.getConsoleSender().sendMessage("§bError conecting with the database! Disabling....");
             Bukkit.getPluginManager().disablePlugin(this);
         }
+    }
+    
+    /*
+    * Setup the Database Tables
+    */
+    private void setupDatabaseTables(){
+        
     }
     
     /*
