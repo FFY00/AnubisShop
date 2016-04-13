@@ -19,6 +19,7 @@ public final class SignChangeListener implements Listener{
     @EventHandler
     public void onSignChange(SignChangeEvent e){
         Sign s = (Sign) e.getBlock().getState();
+        
     }
     
 }
