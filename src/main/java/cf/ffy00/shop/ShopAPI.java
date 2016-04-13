@@ -50,8 +50,7 @@ public final class ShopAPI {
     * Check for an relative sign
     */
     public static boolean hasRelativeSign(Block b){
-        if(b.getState() instanceof Sign
-                    || b.getRelative(BlockFace.UP).getState() instanceof Sign
+        if(b.getRelative(BlockFace.UP).getState() instanceof Sign
                     || b.getRelative(BlockFace.EAST).getState() instanceof Sign
                     || b.getRelative(BlockFace.NORTH).getState() instanceof Sign
                     || b.getRelative(BlockFace.SOUTH).getState() instanceof Sign
