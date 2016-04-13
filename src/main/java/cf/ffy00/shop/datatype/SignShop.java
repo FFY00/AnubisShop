@@ -28,6 +28,7 @@ public class SignShop {
     public SignShop(Sign s){
         String id = ChatColor.stripColor(s.getLine(3)).split("#")[1];
         Database db = getDb();
+        
     }
     
     /*
