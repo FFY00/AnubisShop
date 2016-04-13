@@ -19,7 +19,12 @@ public final class SignChangeListener implements Listener{
     @EventHandler
     public void onSignChange(SignChangeEvent e){
         Sign s = (Sign) e.getBlock().getState();
-        
+        if(s.getLine(3).contains("Shop #") ){
+            try{
+                Integer.parseInt(s.getLine(3).split("#")[1]);
+                
+            } catch(NumberFormatException ex){}
+        }
     }
     
 }
