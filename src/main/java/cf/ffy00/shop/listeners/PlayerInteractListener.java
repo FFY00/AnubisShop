@@ -28,7 +28,7 @@ public final class PlayerInteractListener implements Listener{
                 Sign s = (Sign) b.getState();
                 if(getShop(s).isShop()){
                     Player p = e.getPlayer();
-                        
+                    
                 }
             }
         }
