@@ -48,9 +48,9 @@ public final class ShopPlugin extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage("§bEnabling §cAnubisShop §bv" + pl.getVersion() + " by FFY00!");
         setupConfig();
         registerListeners();
+        registerCommands();
         setupDatabase();
         setupDatabaseTables();
-        
         plugin = this;
     }
 
@@ -81,6 +81,14 @@ public final class ShopPlugin extends JavaPlugin {
         pm.registerEvents(new PlayerInteractListener(), this);
         pm.registerEvents(new BlockBreakListener(), this);
         pm.registerEvents(new LeavesDecayListener(), this);
+    }
+    
+    /*
+    * Register Commands
+    */
+    private void registerCommands(){
+        getCommand("shop").setExecutor(this);
+        getCommand("shopadmin").setExecutor(this);
     }
     
     /*
