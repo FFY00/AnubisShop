@@ -1,1 +1,12 @@
 # TODO
+
+
+#                Database
+#When disabled store the data in .DB file
+MySQL:
+    enabled: false
+    host: 127.0.0.1
+    port: 3306
+    database: anubisshop
+    user: root
+    password: root
