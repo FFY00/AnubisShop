@@ -24,4 +24,5 @@ cache:
   - C:\maven\
   - C:\Users\appveyor\.m2
 artifacts:
-  - path: target\*
+  - path: target\*.jar
+  - name: AnubisShop
