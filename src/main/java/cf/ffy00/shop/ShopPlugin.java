@@ -39,8 +39,8 @@ public final class ShopPlugin extends JavaPlugin {
     private PluginManager pm;
     
     // Table Vars
-    private static Table TABLE_SHOPS;
-    private static Table TABLE_CHESTS;
+    public static Table TABLE_SHOPS;
+    public static Table TABLE_CHESTS;
 
     @Override
     public void onEnable() {
@@ -116,6 +116,13 @@ public final class ShopPlugin extends JavaPlugin {
         TABLE_CHESTS = new Table("chests", "id INT NOT NULL, shop_id INT NOT NULL, itens BLOB, PRIMARY KEY(id)");
         db.registerTable(TABLE_SHOPS);
         db.registerTable(TABLE_CHESTS);
+    }
+    
+    /*
+    * Get Plugin
+    */
+    public static ShopPlugin getPlugin(){
+        return plugin;
     }
     
     /*
