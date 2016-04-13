@@ -126,9 +126,24 @@ public final class ShopPlugin extends JavaPlugin {
     }
     
     /*
-    * Return DatabaseFactory
+    * Get Database
     */
     public static Database getDb(){
         return db;
     }
+    
+    /*
+    * Get Shops Table
+    */
+    public static Table getShopsTable(){
+        return TABLE_SHOPS;
+    }
+    
+    /*
+    * Get Shops Table
+    */
+    public static Table getChestsTable(){
+        return TABLE_CHESTS;
+    }
+    
 }
