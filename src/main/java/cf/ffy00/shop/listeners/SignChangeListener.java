@@ -26,7 +26,7 @@ public final class SignChangeListener implements Listener{
             try{
                 Integer.parseInt(s.getLine(3).split("#")[1]);
                 Database db = getDb();
-                db.set(getShopsTable(), "");
+                db.set(getShopsTable(), "", "");
             } catch(NumberFormatException ex){}
         }
     }
