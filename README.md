@@ -1,6 +1,6 @@
-# AnubisShop [![Build Status](https://travis-ci.org/AnubisCore/AnubisShop.svg?branch=master)](https://travis-ci.org/AnubisCore/AnubisShop) [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/0cmd3uu7qqlgpr4y?svg=true)](https://ci.appveyor.com/project/FFY00/anubisshop) [![License](https://img.shields.io/badge/license-SNCL-lightgrey.svg)](https://tldrlegal.com/license/simple-non-code-license-%28sncl%29) [![Issues](https://img.shields.io/github/issues/anubiscore/anubisshop.svg)](https://github.com/AnubisCore/AnubisShop/issues)
-[![Follow](https://img.shields.io/twitter/follow/FilipeLains.svg)](http://twitter.com/intent/user?screen_name=FilipeLains)
-###### BETA Version [![Commits](https://img.shields.io/github/commits-since/anubiscore/anubisshop/BETA.svg)](https://github.com/AnubisCore/AnubisShop/commits/master) 
+# AnubisShop [![Build Status](https://travis-ci.org/AnubisCore/AnubisShop.svg?branch=master)](https://travis-ci.org/AnubisCore/AnubisShop) [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/0cmd3uu7qqlgpr4y?svg=true)](https://ci.appveyor.com/project/FFY00/anubisshop)
+[![Follow](https://img.shields.io/twitter/follow/MyClaraOswin.svg)](http://twitter.com/intent/user?screen_name=MyClaraOswin)
+###### IN DEVELOPMENT
 ------------------------------------------
 :credit_card: Bukkit Shop Plugin
 
@@ -12,4 +12,4 @@
 You can get all artifacts from our [AppVeyor page](https://ci.appveyor.com/project/FFY00/anubisshop). We use Travis-CI also but only AppVeyor will have the compiled artifacts. For normal releases use our [GitHub release page](https://github.com/AnubisCore/AnubisShop/releases) .
 
 ### Contributors
- - [**Filipe Laíns**](http://twitter.com/intent/user?screen_name=FilipeLains) - Main Developer
+ - [**Filipe Laíns**](http://twitter.com/intent/user?screen_name=MyClaraOswin) - Main Developer
